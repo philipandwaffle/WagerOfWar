@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770549d191a2a624aa64f824b962bdea, type: 3}
+  m_Name: RifleShot
+  m_EditorClassIdentifier: 
+  _name: Rifle Shot
+  _description: Medium damage shot
+  _cooldown: 1
+  _currentCooldown: 0
+  _aType: 0
+  _range: 1
+  _sprite: Sprite/Trooper/RifleIcon
+  _checkLOS: 1
+  _damage: {fileID: 7892342311931087831, guid: 5eac4cd84e702e44c81be183843f61d3, type: 3}

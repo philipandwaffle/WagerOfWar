@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770549d191a2a624aa64f824b962bdea, type: 3}
+  m_Name: Molotov
+  m_EditorClassIdentifier: 
+  _name: Molotov Cocktail
+  _description: AOE grenade that sets units ablaze
+  _cooldown: 3
+  _currentCooldown: 0
+  _aType: 0
+  _range: 2
+  _sprite: Sprite/Trooper/MolotovIcon
+  _checkLOS: 0
+  _damage: {fileID: 3449164331335838341, guid: 6398f59a4c1598347a73ad4c84504f9e, type: 3}

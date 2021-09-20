@@ -1,0 +1,35 @@
+Bugs
+	#none yet :)
+Priorty 0
+	#implement a way for the user to click a unit's attack and the unit that the user wants to attack
+		#maybe hold a ref to the attack selected and the target unit
+		#needs way to check which team unit is on
+			#store on unit obj or on the board obj?
+	#add system to handle turns 
+	
+Priorty 1
+	#implement system to move camera
+		#using mouse drag?
+		#using WASD?
+	#implement system to apply status efects and damage types
+		#have a tick system to add DOT?
+		
+Priorty 2		
+	#look into changing attack system into a more generic action system
+		#all attacks are actions but not all actions are attacks
+		#makes implementing abilities easier
+Priorty 3
+
+	#add more units to the game
+	#add more attacks to the game
+Priorty 4
+	#get some nicer looking sprites
+		#try make own then give up and steal if too hard
+		#look into pixelated render pipeline to pixelate 3d animations?
+	#add story and try to figure archetypes for factions
+		#see book for notes
+		
+Far in the future ideas
+	#implement risk-like board as the main playing field and battles use the prototype minigame to determine who wins instead of dice roll
+	#surroundings based debuffs such as fire DOT if in a desert
+	
