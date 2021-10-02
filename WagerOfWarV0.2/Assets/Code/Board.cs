@@ -40,24 +40,22 @@ public class Board : MonoBehaviour
         g.GetComponent<Unit>()._team = x >= _board.Count / 2 ? 2 : 1;
     }
 
-    public static void ApplyEffects(Action a, Vector2 targetPos)
+    public static void ApplyEffects(Action a, Unit u)
     {
+        Vector2 targetPos = new Vector2((int)(u?.name[0] - '0'), (int)(u.name[2] - '0'));
         List<Vector2> unitsToAffect = new List<Vector2>();
         for (int x = 0; x < _board.Count; x++)
         {
             for (int y = 0; y < _board[x].Count; y++)
             {
                 float dist = Vector2.Distance(new Vector2(x, y), targetPos);
-                if(dist < a._range) { unitsToAffect.Add(new Vector2(x, y)); }
+                if(dist <= a._range && _board[x][y].GetComponent<Unit>()) { unitsToAffect.Add(new Vector2(x, y)); }
             }
         }
         unitsToAffect = PruneEffected(unitsToAffect, targetPos, a._aType);
         foreach (Vector2 unitPos in unitsToAffect)
         {
-            foreach (Effect effect in a._effects)
-            {
-                _board[(int)unitPos.x][(int)unitPos.y].GetComponent<EffectController>();
-            }
+            _board[(int)unitPos.x][(int)unitPos.y].GetComponent<EffectController>().AddEffects(a._effects);
         }
     }
     private static List<Vector2> PruneEffected(List<Vector2> units, Vector2 targetPos, ActionType aType)
@@ -84,6 +82,18 @@ public class Board : MonoBehaviour
                     if (targetPos.y == unitPos.y) { prunedUnits.Add(unitPos); }
                     break;
             }
+        }
+        return prunedUnits;
+    }
+    private static List<Vector2> PruneOwnedUnits(List<Vector2> units)
+    {
+        List<Vector2> prunedUnits = new List<Vector2>();
+        foreach (Vector2 pos in units)
+        {
+            throw new System.NotImplementedException();
+            //float midPoint = _board.Count / 2;
+            //Game._currentTeam
+            //if (pos.x )
         }
         return prunedUnits;
     }

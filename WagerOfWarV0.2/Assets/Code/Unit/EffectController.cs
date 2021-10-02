@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EffectController : MonoBehaviour
 {
-    List<Effect> _effects;
-    Unit _me;
+    [SerializeField] private bool _debug;
+    [SerializeField] private List<Effect> _effects;
+    private Unit _me;
 
     public void Start()
     {
@@ -19,6 +20,31 @@ public class EffectController : MonoBehaviour
         {
             effect.Execute(_me);
         }
+        PruneEffects();
+    }
+    private void PruneEffects()
+    {
+        List<Effect> newEffects = new List<Effect>();
+        foreach (Effect e in _effects)
+        {
+            if (e._Used) { newEffects.Add(e); }
+        }
+        this._effects = newEffects; 
+    }
+    public void AddEffect(Effect e)
+    {
+        _effects.Add(e);
+        if (_debug){ Debug.Log($"Applying {e} to {_me.name}"); }
+    }
+    public void AddEffects(List<Effect> effects)
+    {
+        foreach (Effect e in effects)
+        {
+            AddEffect(e);
+        }
     }
 
+    private void LogDebug()
+    {
+    }
 }

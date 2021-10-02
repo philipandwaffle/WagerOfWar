@@ -37,11 +37,11 @@ public class ActionController : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+        PerformAction();
     }
 
     private void PerformAction()
     {
-        
+        Board.ApplyEffects(_selectedAction, _targetUnit);
     }
 }

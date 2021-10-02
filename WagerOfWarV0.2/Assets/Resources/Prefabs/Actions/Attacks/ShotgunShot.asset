@@ -20,5 +20,6 @@ MonoBehaviour:
   _range: 0
   _sprite: Sprite/RiotTrooper/ShotgunIcon
   _checkLOS: 1
-  _effects: []
+  _effects:
+  - {fileID: 11400000, guid: 53dfd6e3a35294449a71f1af59ddc7ba, type: 2}
   _falloffModifier: 0
