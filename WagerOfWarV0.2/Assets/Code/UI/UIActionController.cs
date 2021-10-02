@@ -9,9 +9,11 @@ public class UIActionController : MonoBehaviour
     [SerializeField] private Image _icon;
     [SerializeField] private string _defaultIcon;
     [SerializeField] private Text _details;
+    public Action _action { private set; get; }
 
     public void UpdateAction(Action action)
     {
+        this._action = action;
         if (action == null)
         {
             _icon.sprite = Resources.Load<Sprite>(_defaultIcon);
@@ -22,4 +24,5 @@ public class UIActionController : MonoBehaviour
         _details.text = action.GenDetails();
         
     }
+
 }

@@ -20,4 +20,4 @@ MonoBehaviour:
   _range: 2
   _sprite: Sprite/Trooper/GrenadeIcon
   _checkLOS: 0
-  _damage: {fileID: 1372437158579515939, guid: 5ccdb7be8f5604b49b0cf6d037adf1a2, type: 3}
+  _effects: []

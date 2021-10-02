@@ -14,6 +14,7 @@ public class Action : ScriptableObject
     public int _range;
     public string _sprite;
     public bool _checkLOS;
+    public List<Effect> _effects;
 
     public virtual string GenDetails()
     {
@@ -24,5 +25,10 @@ public class Action : ScriptableObject
         s += $"Total Cooldown: {_currentCooldown}\n";
         s += $"Current Cooldown: {_currentCooldown}\n";
         return s;
+    }
+
+    public override string ToString()
+    {
+        return $"{_name}";
     }
 }

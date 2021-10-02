@@ -24,6 +24,9 @@ public class OnUnitClicked : MonoBehaviour, IPointerClickHandler
     }
     private void LogDebug()
     {
-        Debug.Log($"Clicked on: {gameObject.name}");
+        string msg = $"Unit clicked: {gameObject.name}";
+        if (_me._team != Game._currentTeam) { msg += "\tSending as target"; }   //if target
+        if (_me._team == Game._currentTeam) { msg += "\tSending as owned"; }  //if owned
+        Debug.Log(msg);
     }
 }
