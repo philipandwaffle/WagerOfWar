@@ -20,4 +20,5 @@ MonoBehaviour:
   _range: 2
   _sprite: Sprite/Trooper/MolotovIcon
   _checkLOS: 0
-  _damage: {fileID: 3449164331335838341, guid: 6398f59a4c1598347a73ad4c84504f9e, type: 3}
+  _effects: []
+  _falloffModifier: 0

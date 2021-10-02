@@ -20,4 +20,5 @@ MonoBehaviour:
   _range: 1
   _sprite: Sprite/Trooper/RifleIcon
   _checkLOS: 1
-  _damage: {fileID: 7892342311931087831, guid: 5eac4cd84e702e44c81be183843f61d3, type: 3}
+  _effects: []
+  _falloffModifier: 0

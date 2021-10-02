@@ -21,3 +21,4 @@ MonoBehaviour:
   _sprite: Sprite/Trooper/GrenadeIcon
   _checkLOS: 0
   _effects: []
+  _falloffModifier: 0

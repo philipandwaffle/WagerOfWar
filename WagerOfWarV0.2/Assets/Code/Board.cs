@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    private List<List<GameObject>> _board;
+    private static List<List<GameObject>> _board;
     [SerializeField] public float _spacing;
 
     private Board(List<List<GameObject>> board)
@@ -40,14 +40,58 @@ public class Board : MonoBehaviour
         g.GetComponent<Unit>()._team = x >= _board.Count / 2 ? 2 : 1;
     }
 
-    public void ExecuteEffects()
+    public static void ApplyEffects(Action a, Vector2 targetPos)
     {
-        foreach (List<GameObject> col in _board)
+        List<Vector2> unitsToAffect = new List<Vector2>();
+        for (int x = 0; x < _board.Count; x++)
         {
-            foreach (GameObject unit in col)
+            for (int y = 0; y < _board[x].Count; y++)
             {
-                unit.GetComponent<Effect>()?.Execute();
+                float dist = Vector2.Distance(new Vector2(x, y), targetPos);
+                if(dist < a._range) { unitsToAffect.Add(new Vector2(x, y)); }
+            }
+        }
+        unitsToAffect = PruneEffected(unitsToAffect, targetPos, a._aType);
+        foreach (Vector2 unitPos in unitsToAffect)
+        {
+            foreach (Effect effect in a._effects)
+            {
+                _board[(int)unitPos.x][(int)unitPos.y].GetComponent<EffectController>();
             }
         }
     }
+    private static List<Vector2> PruneEffected(List<Vector2> units, Vector2 targetPos, ActionType aType)
+    {
+        List<Vector2> prunedUnits = new List<Vector2>();
+        foreach (Vector2 unitPos in units)
+        {
+            switch (aType)
+            {
+                case ActionType.circle:
+                    prunedUnits.Add(unitPos);
+                    break;
+                case ActionType.cross:
+                    if (unitPos.x == targetPos.x || unitPos.y == targetPos.y) { prunedUnits.Add(unitPos); }
+                    break;
+                case ActionType.diagonal:
+                    Vector2 adjustedPoint = unitPos - targetPos;
+                    if (Mathf.Abs(adjustedPoint.x) == Mathf.Abs(adjustedPoint.y)) { prunedUnits.Add(unitPos); }
+                    break;
+                case ActionType.horizontal:
+                    if (targetPos.x == unitPos.x) { prunedUnits.Add(unitPos); }
+                    break;
+                case ActionType.vertical:
+                    if (targetPos.y == unitPos.y) { prunedUnits.Add(unitPos); }
+                    break;
+            }
+        }
+        return prunedUnits;
+    }
+    private static float GetFalloffModifier(float dist, int range)
+    {
+        float falloff = 0;
+        falloff = (Mathf.Cos((dist / range) * Mathf.PI) / 2) + 0.5f;
+        return falloff;
+    }
+
 }

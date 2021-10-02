@@ -15,6 +15,7 @@ public class Action : ScriptableObject
     public string _sprite;
     public bool _checkLOS;
     public List<Effect> _effects;
+    public float _falloffModifier;
 
     public virtual string GenDetails()
     {
