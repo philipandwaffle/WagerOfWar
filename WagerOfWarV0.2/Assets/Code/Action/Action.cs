@@ -15,7 +15,7 @@ public class Action : ScriptableObject
     public string _sprite;
     public bool _checkLOS;
     public List<Effect> _effects;
-    public float _falloffModifier;
+    public bool _targetFirendly;
 
     public virtual string GenDetails()
     {
@@ -31,5 +31,13 @@ public class Action : ScriptableObject
     public override string ToString()
     {
         return $"{_name}";
+    }
+
+    public virtual void SetEffectFalloff(float f)
+    {
+        foreach (Effect e in _effects)
+        {
+            e._falloffModifier = f;
+        }
     }
 }

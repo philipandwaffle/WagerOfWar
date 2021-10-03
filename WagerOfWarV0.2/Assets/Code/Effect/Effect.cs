@@ -8,6 +8,8 @@ public abstract class Effect : ScriptableObject
 {
     [SerializeField] public string _name;
     [SerializeField] public string _description;
+    public float _falloffModifier;
+
     public bool _Used { private set; get; }
 
     public abstract void Execute(Unit u);

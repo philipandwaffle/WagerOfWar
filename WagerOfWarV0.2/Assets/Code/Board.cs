@@ -43,22 +43,39 @@ public class Board : MonoBehaviour
     public static void ApplyEffects(Action a, Unit u)
     {
         Vector2 targetPos = new Vector2((int)(u?.name[0] - '0'), (int)(u.name[2] - '0'));
+
+        List<Vector2> unitsToAffect = GetEffected(a, u, targetPos);
+        foreach (Vector2 unitPos in unitsToAffect)
+        {
+            float falloffMultiplier = GetFalloffModifier(unitPos, targetPos, a._range);
+            a.SetEffectFalloff(falloffMultiplier);
+            _board[(int)unitPos.x][(int)unitPos.y].GetComponent<EffectController>().AddEffects(a._effects);
+        }
+    }
+    public static List<Vector2> GetEffected(Action a, Unit u, Vector2 targetPos)
+    {
         List<Vector2> unitsToAffect = new List<Vector2>();
         for (int x = 0; x < _board.Count; x++)
         {
             for (int y = 0; y < _board[x].Count; y++)
             {
-                float dist = Vector2.Distance(new Vector2(x, y), targetPos);
-                if(dist <= a._range && _board[x][y].GetComponent<Unit>()) { unitsToAffect.Add(new Vector2(x, y)); }
+                Vector2 unitPos = new Vector2(x, y);
+                if (IsInRange(unitPos, targetPos, a._range) && IsUnitEffected(u._team, Game._currentTeam, a._targetFirendly)) { unitsToAffect.Add(unitPos); }
             }
         }
-        unitsToAffect = PruneEffected(unitsToAffect, targetPos, a._aType);
-        foreach (Vector2 unitPos in unitsToAffect)
-        {
-            _board[(int)unitPos.x][(int)unitPos.y].GetComponent<EffectController>().AddEffects(a._effects);
-        }
+        unitsToAffect = PruneAType(unitsToAffect, targetPos, a._aType);
+        return unitsToAffect;
     }
-    private static List<Vector2> PruneEffected(List<Vector2> units, Vector2 targetPos, ActionType aType)
+    private static bool IsInRange(Vector2 unitPos, Vector2 targetPos, float range)
+    {
+        float dist = Vector2.Distance(unitPos, targetPos);
+        return dist <= range;
+    }    
+    private static bool IsUnitEffected(int unitTeam, int currentTeam, bool targetFriendly)
+    {
+        return ((unitTeam == currentTeam) && targetFriendly) || ((unitTeam != currentTeam) && !targetFriendly);
+    }    
+    private static List<Vector2> PruneAType(List<Vector2> units, Vector2 targetPos, ActionType aType)
     {
         List<Vector2> prunedUnits = new List<Vector2>();
         foreach (Vector2 unitPos in units)
@@ -85,22 +102,11 @@ public class Board : MonoBehaviour
         }
         return prunedUnits;
     }
-    private static List<Vector2> PruneOwnedUnits(List<Vector2> units)
-    {
-        List<Vector2> prunedUnits = new List<Vector2>();
-        foreach (Vector2 pos in units)
-        {
-            throw new System.NotImplementedException();
-            //float midPoint = _board.Count / 2;
-            //Game._currentTeam
-            //if (pos.x )
-        }
-        return prunedUnits;
-    }
-    private static float GetFalloffModifier(float dist, int range)
+    private static float GetFalloffModifier(Vector2 unitPos, Vector2 targetPos, int range)
     {
         float falloff = 0;
-        falloff = (Mathf.Cos((dist / range) * Mathf.PI) / 2) + 0.5f;
+        float dist = Vector2.Distance(unitPos, targetPos);
+        falloff = (Mathf.Cos(dist * Mathf.PI / range) + 1) / 2;
         return falloff;
     }
 
