@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    private static List<List<GameObject>> _board;
+    public static List<List<GameObject>> _board;
     [SerializeField] public float _spacing;
 
     private Board(List<List<GameObject>> board)
@@ -60,7 +60,14 @@ public class Board : MonoBehaviour
             for (int y = 0; y < _board[x].Count; y++)
             {
                 Vector2 unitPos = new Vector2(x, y);
-                if (IsInRange(unitPos, targetPos, a._range) && IsUnitEffected(u._team, Game._currentTeam, a._targetFirendly)) { unitsToAffect.Add(unitPos); }
+                if (unitPos == new Vector2(2,1))
+                {
+
+                }
+                bool inRange = IsInRange(unitPos, targetPos, a._range);
+                int? uTeam = _board[x][y]?.GetComponent<Unit>()._team;
+                bool unitEffected = IsUnitEffected(_board[x][y]?.GetComponent<Unit>()._team, Game._currentTeam, a._targetFirendly);
+                if (inRange && unitEffected) { unitsToAffect.Add(unitPos); }
             }
         }
         unitsToAffect = PruneAType(unitsToAffect, targetPos, a._aType);
@@ -71,8 +78,10 @@ public class Board : MonoBehaviour
         float dist = Vector2.Distance(unitPos, targetPos);
         return dist <= range;
     }    
-    private static bool IsUnitEffected(int unitTeam, int currentTeam, bool targetFriendly)
+    public static bool IsUnitEffected(int? unitTeam, int currentTeam, bool targetFriendly)
     {
+        unitTeam = unitTeam == null ? 0 : unitTeam;
+        //Debug.Log($"{unitTeam},{currentTeam},{targetFriendly}: {((unitTeam == currentTeam) && targetFriendly) || ((unitTeam != currentTeam) && !targetFriendly)}");
         return ((unitTeam == currentTeam) && targetFriendly) || ((unitTeam != currentTeam) && !targetFriendly);
     }    
     private static List<Vector2> PruneAType(List<Vector2> units, Vector2 targetPos, ActionType aType)
