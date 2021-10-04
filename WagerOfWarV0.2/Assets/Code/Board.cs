@@ -9,6 +9,15 @@ public class Board : MonoBehaviour
 
     private Board(List<List<GameObject>> board)
     {
+        _board = new List<List<GameObject>>();
+        for (int x = 0; x < board.Count; x++)
+        {
+            _board.Add(new List<GameObject>());
+            for (int y = 0; y < board[x].Count; y++)
+            {
+                _board[x].Add(Instantiate(_board[x][y]));
+            }
+        }
         _board = board;
     }
     public void PopulateBoard(List<List<GameObject>> board)
@@ -33,7 +42,7 @@ public class Board : MonoBehaviour
 
     private void SetUpUnit(GameObject g, int x, int y)
     {
-        g.transform.SetParent(gameObject.transform);
+        g.transform.SetParent(gameObject.transform);    //after hitting F10 units in col 3 are set when col 2 are only supposed to 
         g.transform.position = new Vector3(x * _spacing, y * _spacing, 0);
         g.name = $"{x},{y}:\t{g.GetComponent<Unit>()._name}";
         g.GetComponent<SpriteController>().SetFlipX(x >= _board.Count / 2);
@@ -60,10 +69,6 @@ public class Board : MonoBehaviour
             for (int y = 0; y < _board[x].Count; y++)
             {
                 Vector2 unitPos = new Vector2(x, y);
-                if (unitPos == new Vector2(2,1))
-                {
-
-                }
                 bool inRange = IsInRange(unitPos, targetPos, a._range);
                 int? uTeam = _board[x][y]?.GetComponent<Unit>()._team;
                 bool unitEffected = IsUnitEffected(_board[x][y]?.GetComponent<Unit>()._team, Game._currentTeam, a._targetFirendly);
