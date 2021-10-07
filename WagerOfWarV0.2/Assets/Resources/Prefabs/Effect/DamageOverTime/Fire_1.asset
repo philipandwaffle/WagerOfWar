@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 
   _description: 
+  _falloffModifier: 0
+  _spent: 0
   _damage: 10
   _dType: 0
-  _ticksLeft: 2
+  _ticksLeft: 4

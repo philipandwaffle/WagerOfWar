@@ -10,7 +10,9 @@ public abstract class Effect : ScriptableObject
     [SerializeField] public string _description;
     public float _falloffModifier;
 
-    public bool _Used { private set; get; }
+    public bool _spent = false;
 
     public abstract void Execute(Unit u);
+
+
 }

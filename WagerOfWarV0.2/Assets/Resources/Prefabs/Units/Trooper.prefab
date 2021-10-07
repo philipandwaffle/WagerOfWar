@@ -181,8 +181,8 @@ MonoBehaviour:
   _name: Trooper
   _description: Your standard unit
   _hpc:
-    _health: 50
-    _armour: 100
+    _health: 100
+    _armour: 25
     _modifier: 0.25
     _isDead: 0
   _uType: 0
@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _debug: 1
+  _effects: []
 --- !u!1 &7698989029336115159
 GameObject:
   m_ObjectHideFlags: 0

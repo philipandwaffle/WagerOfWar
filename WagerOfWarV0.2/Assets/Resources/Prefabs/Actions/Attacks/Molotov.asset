@@ -17,9 +17,9 @@ MonoBehaviour:
   _cooldown: 3
   _currentCooldown: 0
   _aType: 0
-  _range: 2
-  _sprite: Sprite/Trooper/MolotovIcon
+  _range: 1
+  _sprite: Sprite/RiotTrooper/MolotovIcon
   _checkLOS: 0
   _effects:
   - {fileID: 11400000, guid: 9e1963bf1ee1ce54dab338a2595e8762, type: 2}
-  _falloffModifier: 0
+  _targetFirendly: 0

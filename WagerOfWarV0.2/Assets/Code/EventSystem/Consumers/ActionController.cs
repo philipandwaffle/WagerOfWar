@@ -32,7 +32,8 @@ public class ActionController : MonoBehaviour, IPointerClickHandler
     private void UpdateText()
     {
         _details.text = $"Targeting: {_targetUnit?.name}\n" +
-            $"Action: {_selectedAction?.name}";
+            $"Action: {_selectedAction?.name}\n" +
+            $"Current team: {Game._currentTeam}";
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -42,6 +43,13 @@ public class ActionController : MonoBehaviour, IPointerClickHandler
 
     private void PerformAction()
     {
-        Board.ApplyEffects(_selectedAction, _targetUnit);
+        if (_targetUnit != null && _selectedAction != null)
+        {
+            Game._board.ApplyEffects(_selectedAction, _targetUnit);
+            Game.NextTurn();
+            _targetUnit = null;
+            _selectedAction = null;
+            UpdateText();
+        }
     }
 }

@@ -17,9 +17,9 @@ MonoBehaviour:
   _cooldown: 2
   _currentCooldown: 0
   _aType: 0
-  _range: 2
+  _range: 1
   _sprite: Sprite/Trooper/GrenadeIcon
   _checkLOS: 0
   _effects:
   - {fileID: 11400000, guid: 8fd99e1c96115bb45a1934c6618870e3, type: 2}
-  _falloffModifier: 0
+  _targetFirendly: 0

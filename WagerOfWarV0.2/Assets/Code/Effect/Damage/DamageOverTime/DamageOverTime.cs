@@ -7,9 +7,10 @@ using UnityEngine;
 public class DamageOverTime : Damage
 {
     [SerializeField] private int _ticksLeft;
-
     public override void Execute(Unit u)
     {
-        throw new System.NotImplementedException();
+        u.Damage(_damage);
+        --_ticksLeft;
+        if(_ticksLeft == 0) { _spent = true; }
     }
 }

@@ -12,6 +12,7 @@ public class Damage : Effect
 
     public override void Execute(Unit u)
     {
-        throw new System.NotImplementedException();
+        u.Damage(_damage);
+        _spent = true;
     }
 }

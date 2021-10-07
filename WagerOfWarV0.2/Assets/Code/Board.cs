@@ -49,7 +49,7 @@ public class Board : MonoBehaviour
         g.GetComponent<Unit>()._team = x >= _board.Count / 2 ? 2 : 1;
     }
 
-    public static void ApplyEffects(Action a, Unit u)
+    public void ApplyEffects(Action a, Unit u)
     {
         Vector2 targetPos = new Vector2((int)(u?.name[0] - '0'), (int)(u.name[2] - '0'));
 
@@ -58,10 +58,10 @@ public class Board : MonoBehaviour
         {
             float falloffMultiplier = GetFalloffModifier(unitPos, targetPos, a._range);
             a.SetEffectFalloff(falloffMultiplier);
-            _board[(int)unitPos.x][(int)unitPos.y].GetComponent<EffectController>().AddEffects(a._effects);
+            _board[(int)unitPos.x][(int)unitPos.y]?.GetComponent<EffectController>().AddEffects(a._effects);
         }
     }
-    public static List<Vector2> GetEffected(Action a, Unit u, Vector2 targetPos)
+    private List<Vector2> GetEffected(Action a, Unit u, Vector2 targetPos)
     {
         List<Vector2> unitsToAffect = new List<Vector2>();
         for (int x = 0; x < _board.Count; x++)
@@ -78,18 +78,18 @@ public class Board : MonoBehaviour
         unitsToAffect = PruneAType(unitsToAffect, targetPos, a._aType);
         return unitsToAffect;
     }
-    private static bool IsInRange(Vector2 unitPos, Vector2 targetPos, float range)
+    private bool IsInRange(Vector2 unitPos, Vector2 targetPos, float range)
     {
         float dist = Vector2.Distance(unitPos, targetPos);
         return dist <= range;
     }    
-    public static bool IsUnitEffected(int? unitTeam, int currentTeam, bool targetFriendly)
+    public bool IsUnitEffected(int? unitTeam, int currentTeam, bool targetFriendly)
     {
         unitTeam = unitTeam == null ? 0 : unitTeam;
         //Debug.Log($"{unitTeam},{currentTeam},{targetFriendly}: {((unitTeam == currentTeam) && targetFriendly) || ((unitTeam != currentTeam) && !targetFriendly)}");
         return ((unitTeam == currentTeam) && targetFriendly) || ((unitTeam != currentTeam) && !targetFriendly);
     }    
-    private static List<Vector2> PruneAType(List<Vector2> units, Vector2 targetPos, ActionType aType)
+    private List<Vector2> PruneAType(List<Vector2> units, Vector2 targetPos, ActionType aType)
     {
         List<Vector2> prunedUnits = new List<Vector2>();
         foreach (Vector2 unitPos in units)
@@ -107,16 +107,16 @@ public class Board : MonoBehaviour
                     if (Mathf.Abs(adjustedPoint.x) == Mathf.Abs(adjustedPoint.y)) { prunedUnits.Add(unitPos); }
                     break;
                 case ActionType.horizontal:
-                    if (targetPos.x == unitPos.x) { prunedUnits.Add(unitPos); }
+                    if (targetPos.y == unitPos.y) { prunedUnits.Add(unitPos); }
                     break;
                 case ActionType.vertical:
-                    if (targetPos.y == unitPos.y) { prunedUnits.Add(unitPos); }
+                    if (targetPos.x == unitPos.x) { prunedUnits.Add(unitPos); }
                     break;
             }
         }
         return prunedUnits;
     }
-    private static float GetFalloffModifier(Vector2 unitPos, Vector2 targetPos, int range)
+    private float GetFalloffModifier(Vector2 unitPos, Vector2 targetPos, int range)
     {
         float falloff = 0;
         float dist = Vector2.Distance(unitPos, targetPos);
@@ -124,4 +124,14 @@ public class Board : MonoBehaviour
         return falloff;
     }
 
+    public void SpendEffects()
+    {
+        for (int x = 0; x < _board.Count; x++)
+        {
+            for (int y = 0; y < _board[x].Count; y++)
+            {
+                _board[x][y]?.GetComponent<EffectController>().SpendEffects();
+            }
+        }
+    }
 }

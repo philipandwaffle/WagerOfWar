@@ -14,20 +14,24 @@ public class EffectController : MonoBehaviour
         _me = GetComponent<Unit>();
     }
 
-    public void ExecuteEffects()
+    public void SpendEffects()
     {
-        foreach (Effect effect in _effects)
+        if (_effects.Count > 0)
         {
-            effect.Execute(_me);
+            foreach (Effect e in _effects)
+            {
+                e.Execute(_me);
+
+            }
+            PruneEffects();
         }
-        PruneEffects();
     }
     private void PruneEffects()
     {
         List<Effect> newEffects = new List<Effect>();
         foreach (Effect e in _effects)
         {
-            if (e._Used) { newEffects.Add(e); }
+            if (!e._spent) { newEffects.Add(e); }
         }
         this._effects = newEffects; 
     }
@@ -40,7 +44,7 @@ public class EffectController : MonoBehaviour
     {
         foreach (Effect e in effects)
         {
-            AddEffect(e);
+            AddEffect(Instantiate(e));
         }
     }
 

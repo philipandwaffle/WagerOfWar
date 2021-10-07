@@ -5,7 +5,7 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
     public static int _currentTeam = 1;
-    private Board _board;
+    public static Board _board;
 
     private GameObject _trooper;
     private GameObject _riotTrooper;
@@ -36,6 +36,7 @@ public class Game : MonoBehaviour
 
     public static void NextTurn()
     {
-
+        _currentTeam = _currentTeam == 1 ? 2 : 1;
+        _board.SpendEffects();
     }
 }

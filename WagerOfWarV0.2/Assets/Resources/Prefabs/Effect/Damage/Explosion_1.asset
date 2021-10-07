@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 
   _description: 
+  _falloffModifier: 0
+  _spent: 0
   _damage: 25
   _dType: 3

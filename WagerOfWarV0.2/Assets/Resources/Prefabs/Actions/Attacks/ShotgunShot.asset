@@ -17,9 +17,9 @@ MonoBehaviour:
   _cooldown: 2
   _currentCooldown: 0
   _aType: 4
-  _range: 0
+  _range: 1
   _sprite: Sprite/RiotTrooper/ShotgunIcon
   _checkLOS: 1
   _effects:
   - {fileID: 11400000, guid: 53dfd6e3a35294449a71f1af59ddc7ba, type: 2}
-  _falloffModifier: 0
+  _targetFirendly: 0

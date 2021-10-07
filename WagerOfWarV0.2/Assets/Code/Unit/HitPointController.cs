@@ -39,7 +39,7 @@ public class HitPointController
         {
             float carryOver = effectiveHealth - d;
             _armour = 0;
-            return carryOver;
+            return -carryOver;
         }
     }
 }

@@ -14,8 +14,10 @@ public class UIActionController : MonoBehaviour
     public void UpdateAction(Action action)
     {
         this._action = action;
+        gameObject.SetActive(true);
         if (action == null)
         {
+            gameObject.SetActive(false);
             _icon.sprite = Resources.Load<Sprite>(_defaultIcon);
             _details.text = "NO ACTION";
             return;

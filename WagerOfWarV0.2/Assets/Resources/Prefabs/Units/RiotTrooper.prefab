@@ -193,8 +193,8 @@ MonoBehaviour:
   _name: Riot Trooper
   _description: Heavily armoured  unit
   _hpc:
-    _health: 100
-    _armour: 50
+    _health: 50
+    _armour: 100
     _modifier: 0.25
     _isDead: 0
   _uType: 0
@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _debug: 1
+  _effects: []
 --- !u!1 &2568858380276161339
 GameObject:
   m_ObjectHideFlags: 0

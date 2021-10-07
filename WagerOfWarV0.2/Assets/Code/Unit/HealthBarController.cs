@@ -21,8 +21,8 @@ public class HealthBarController : MonoBehaviour
 
     public void UpdateBar(float health, float armour)
     {
-        this._healthTxt.text = health.ToString();
-        this._armourTxt.text = armour.ToString();
+        this._healthTxt.text = Mathf.Ceil(health).ToString();
+        this._armourTxt.text = Mathf.Ceil(armour).ToString();
         float healthScale = health / _total;
         float armourScale = armour / _total;
 
