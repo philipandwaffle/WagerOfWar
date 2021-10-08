@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteController : MonoBehaviour
@@ -9,20 +7,15 @@ public class SpriteController : MonoBehaviour
     [SerializeField] public bool _flipX;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _spriteRenderer.sprite = Resources.Load<Sprite>(_path);
-        UpdateFlipX();
+        _spriteRenderer.flipX = _flipX;
     }
 
     public void SetFlipX(bool b)
     {
         this._flipX = b;
-        UpdateFlipX();
-    }
-
-    private void UpdateFlipX()
-    {
         _spriteRenderer.flipX = _flipX;
     }
 }

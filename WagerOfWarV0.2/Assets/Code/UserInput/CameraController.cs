@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] public GameObject _game;
-    [SerializeField] float _minSize = 1f;
-    [SerializeField] float _maxSize = 10f;
-    [SerializeField] float _sensitivity = 10f;
-    [SerializeField] int _mouseButton;
+    [SerializeField] private GameObject _game;
+    [SerializeField] private float _minSize = 1f;
+    [SerializeField] private float _maxSize = 10f;
+    [SerializeField] private float _sensitivity = 10f;
+    [SerializeField] private int _mouseButton;
 
     private Camera _me;
     private Vector2 _dragOrigin;
@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
     private bool _buttonHeld;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _dragOrigin = Input.mousePosition;
         _me = GetComponent<Camera>();
@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Move();
         Zoom();

@@ -13,6 +13,4 @@ public abstract class Effect : ScriptableObject
     public bool _spent = false;
 
     public abstract void Execute(Unit u);
-
-
 }

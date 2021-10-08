@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OwnUnitReceiver : MonoBehaviour
@@ -8,7 +6,7 @@ public class OwnUnitReceiver : MonoBehaviour
     public void Start()
     {
         _uic = GetComponent<UIController>();
-        GameEvents.events._onOwnUnitClicked += SetCurrentUnit;
+        GameEvents.events._onOwnUnitClick += SetCurrentUnit;
     }
     private void SetCurrentUnit(Unit u)
     {

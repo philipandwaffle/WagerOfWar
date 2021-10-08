@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ public class Game : MonoBehaviour
     private GameObject _riotTrooper;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _trooper = Resources.Load<GameObject>("Prefabs/Units/Trooper");
         _riotTrooper = Resources.Load<GameObject>("Prefabs/Units/RiotTrooper");
@@ -28,15 +27,10 @@ public class Game : MonoBehaviour
         _board.PlaceUnits();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public static void NextTurn()
     {
         _currentTeam = _currentTeam == 1 ? 2 : 1;
         _board.SpendEffects();
+        OnTurnEnd.EndTurn();
     }
 }

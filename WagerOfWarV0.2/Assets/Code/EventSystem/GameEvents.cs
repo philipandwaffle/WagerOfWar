@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class GameEvents : MonoBehaviour
@@ -19,10 +18,10 @@ public class GameEvents : MonoBehaviour
 
     //for when a unit that you own is clicked and sent to the UI
     public delegate void OnOwnUnitClickDelegate(Unit u);
-    public event OnOwnUnitClickDelegate _onOwnUnitClicked;
+    public event OnOwnUnitClickDelegate _onOwnUnitClick;
     public void OnOwnUnitClick(Unit u)
     {
-        _onOwnUnitClicked?.Invoke(u);
+        _onOwnUnitClick?.Invoke(u);
     }
 
     //for when a unit that you're targeting is clicked and sent to the action manager

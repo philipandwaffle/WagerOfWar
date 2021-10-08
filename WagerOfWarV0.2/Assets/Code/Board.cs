@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,19 +6,6 @@ public class Board : MonoBehaviour
     public static List<List<GameObject>> _board;
     [SerializeField] public float _spacing;
 
-    private Board(List<List<GameObject>> board)
-    {
-        _board = new List<List<GameObject>>();
-        for (int x = 0; x < board.Count; x++)
-        {
-            _board.Add(new List<GameObject>());
-            for (int y = 0; y < board[x].Count; y++)
-            {
-                _board[x].Add(Instantiate(_board[x][y]));
-            }
-        }
-        _board = board;
-    }
     public void PopulateBoard(List<List<GameObject>> board)
     {
         _board = board;
@@ -68,6 +54,8 @@ public class Board : MonoBehaviour
         {
             for (int y = 0; y < _board[x].Count; y++)
             {
+                GameObject go = _board[x][y];
+                if (_board[x][y] == null || _board[x][y].Equals(null)) { break; }
                 Vector2 unitPos = new Vector2(x, y);
                 bool inRange = IsInRange(unitPos, targetPos, a._range);
                 int? uTeam = _board[x][y]?.GetComponent<Unit>()._team;
@@ -83,34 +71,34 @@ public class Board : MonoBehaviour
         float dist = Vector2.Distance(unitPos, targetPos);
         return dist <= range;
     }    
-    public bool IsUnitEffected(int? unitTeam, int currentTeam, bool targetFriendly)
+    public bool IsUnitEffected(int? uTeam, int currentTeam, bool targetFriendly)
     {
-        unitTeam = unitTeam == null ? 0 : unitTeam;
+        uTeam = uTeam == null ? 0 : uTeam;
         //Debug.Log($"{unitTeam},{currentTeam},{targetFriendly}: {((unitTeam == currentTeam) && targetFriendly) || ((unitTeam != currentTeam) && !targetFriendly)}");
-        return ((unitTeam == currentTeam) && targetFriendly) || ((unitTeam != currentTeam) && !targetFriendly);
+        return ((uTeam == currentTeam) && targetFriendly) || ((uTeam != currentTeam) && !targetFriendly);
     }    
-    private List<Vector2> PruneAType(List<Vector2> units, Vector2 targetPos, ActionType aType)
+    private List<Vector2> PruneAType(List<Vector2> u, Vector2 tPos, ActionType aType)
     {
         List<Vector2> prunedUnits = new List<Vector2>();
-        foreach (Vector2 unitPos in units)
+        foreach (Vector2 uPos in u)
         {
             switch (aType)
             {
                 case ActionType.circle:
-                    prunedUnits.Add(unitPos);
+                    prunedUnits.Add(uPos);
                     break;
                 case ActionType.cross:
-                    if (unitPos.x == targetPos.x || unitPos.y == targetPos.y) { prunedUnits.Add(unitPos); }
+                    if (uPos.x == tPos.x || uPos.y == tPos.y) { prunedUnits.Add(uPos); }
                     break;
                 case ActionType.diagonal:
-                    Vector2 adjustedPoint = unitPos - targetPos;
-                    if (Mathf.Abs(adjustedPoint.x) == Mathf.Abs(adjustedPoint.y)) { prunedUnits.Add(unitPos); }
+                    Vector2 adjustedPoint = uPos - tPos;
+                    if (Mathf.Abs(adjustedPoint.x) == Mathf.Abs(adjustedPoint.y)) { prunedUnits.Add(uPos); }
                     break;
                 case ActionType.horizontal:
-                    if (targetPos.y == unitPos.y) { prunedUnits.Add(unitPos); }
+                    if (tPos.y == uPos.y) { prunedUnits.Add(uPos); }
                     break;
                 case ActionType.vertical:
-                    if (targetPos.x == unitPos.x) { prunedUnits.Add(unitPos); }
+                    if (tPos.x == uPos.x) { prunedUnits.Add(uPos); }
                     break;
             }
         }
@@ -130,6 +118,7 @@ public class Board : MonoBehaviour
         {
             for (int y = 0; y < _board[x].Count; y++)
             {
+                if (_board[x][y] == null || _board[x][y].Equals(null)) { break; }
                 _board[x][y]?.GetComponent<EffectController>().SpendEffects();
             }
         }

@@ -8,7 +8,7 @@ public class EffectController : MonoBehaviour
     [SerializeField] private List<Effect> _effects;
     private Unit _me;
 
-    public void Start()
+    private void Start()
     {
         _effects = new List<Effect>();
         _me = GetComponent<Unit>();
@@ -35,20 +35,12 @@ public class EffectController : MonoBehaviour
         }
         this._effects = newEffects; 
     }
-    public void AddEffect(Effect e)
-    {
-        _effects.Add(e);
-        if (_debug){ Debug.Log($"Applying {e} to {_me.name}"); }
-    }
     public void AddEffects(List<Effect> effects)
     {
         foreach (Effect e in effects)
         {
-            AddEffect(Instantiate(e));
+            _effects.Add(e);
+            if (_debug) { Debug.Log($"Applying {e} to {_me.name}"); }
         }
-    }
-
-    private void LogDebug()
-    {
     }
 }

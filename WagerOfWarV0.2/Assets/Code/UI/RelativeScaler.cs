@@ -6,7 +6,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class RelativeScaler : MonoBehaviour
 {
-    [SerializeField] public float _xScale = 1;
+    [SerializeField] private float _xScale = 1;
     [SerializeField] private float _yScale = 1;
     [SerializeField] private float _xPos;
     [SerializeField] private float _yPos;
@@ -16,7 +16,7 @@ public class RelativeScaler : MonoBehaviour
     [SerializeField] private RectTransform _me;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _parent = gameObject.transform.parent.GetComponent<RectTransform>();
         if (gameObject.GetComponent<RectTransform>() != null)
@@ -27,7 +27,7 @@ public class RelativeScaler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         UpdateScale();
         UpdatePos();

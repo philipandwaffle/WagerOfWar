@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,8 +5,8 @@ using UnityEngine.UI;
 public class ActionController : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Text _details;
-    public Unit _targetUnit { private set; get; }
-    public Action _selectedAction { private set; get; }
+    private Unit _targetUnit;
+    private Action _selectedAction;
 
     // Start is called before the first frame update
     private void Start()

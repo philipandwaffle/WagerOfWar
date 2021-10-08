@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 2568858380231028669}
   - component: {fileID: 2568858380231028666}
   - component: {fileID: 2568858380231028667}
-  - component: {fileID: 1447611091514317416}
+  - component: {fileID: 7342350999366487081}
   - component: {fileID: 5105821948059185449}
   m_Layer: 0
   m_Name: RiotTrooper
@@ -192,16 +192,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Riot Trooper
   _description: Heavily armoured  unit
+  _actions:
+  - {fileID: 11400000, guid: 8644d25d7145b2744845785a16b14c49, type: 2}
+  - {fileID: 11400000, guid: d911cc60840d6bf4c85ec2431d0f2ea3, type: 2}
+  - {fileID: 0}
   _hpc:
     _health: 50
     _armour: 100
     _modifier: 0.25
     _isDead: 0
   _uType: 0
-  _actions:
-  - {fileID: 11400000, guid: 8644d25d7145b2744845785a16b14c49, type: 2}
-  - {fileID: 11400000, guid: d911cc60840d6bf4c85ec2431d0f2ea3, type: 2}
-  - {fileID: 0}
   _team: 0
 --- !u!114 &2568858380231028666
 MonoBehaviour:
@@ -235,7 +235,7 @@ MonoBehaviour:
   _barContainer: {fileID: 2568858379914144406}
   _healthTxt: {fileID: 2568858381525041081}
   _armourTxt: {fileID: 2568858380053723811}
---- !u!114 &1447611091514317416
+--- !u!114 &7342350999366487081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

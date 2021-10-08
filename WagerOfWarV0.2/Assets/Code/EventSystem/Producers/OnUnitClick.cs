@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OnUnitClicked : MonoBehaviour, IPointerClickHandler
+public class OnUnitClick : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] public bool _debug;
     private Unit _me;
