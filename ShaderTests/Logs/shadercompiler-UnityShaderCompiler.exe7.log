@@ -1,0 +1,137 @@
+Base path: 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+
+Cmd: initializeCompiler
+
+Cmd: initializeCompiler
+
+Cmd: compileComputeKernel
+  insize=3145 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/DebugLightCluster.compute kernel=DebugLightCluster cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=2624
+
+Cmd: compileComputeKernel
+  insize=4757 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/SubSurface/RayTracingSubSurface.compute kernel=ClearTexture cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=418
+
+Cmd: compileComputeKernel
+  insize=6333 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/Denoising/DiffuseShadowDenoiser.compute kernel=BilateralFilterVSingleDirectional cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<BILATERAL_FILTER=BilateralFilterVSingleDirectional>,<FINAL_PASS=1>,<SINGLE_CHANNEL=1>,<DIRECTIONAL_LIGHT=1>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=6014
+
+Cmd: compileComputeKernel
+  insize=6577 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/RaytracingLightCluster.compute kernel=RaytracingLightCull cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=583
+
+Cmd: compileComputeKernel
+  insize=33284 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/Shadows/RaytracingShadow.compute kernel=ClearShadowTexture cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=426
+
+Cmd: compileComputeKernel
+  insize=1252 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/RayTracingAmbientOcclusion.compute kernel=RTAOApplyIntensity cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=671
+
+Cmd: compileComputeKernel
+  insize=6865 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/RenderPass/ColorPyramid.compute kernel=KColorDownsample cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<KERNEL_SIZE=8>,<MAIN_DOWNSAMPLE=KColorDownsample>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=DISABLE_TEXTURE2D_X_ARRAY SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=1033
+
+Cmd: compileComputeKernel
+  insize=14405 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/Reflections/RaytracingReflections.compute kernel=RaytracingReflectionsFullRes cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=7763
+
+Cmd: compileComputeKernel
+  insize=3615 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/Denoising/SimpleDenoiser.compute kernel=BilateralFilterVSingle cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<BILATERAL_FILTER=BilateralFilterVSingle>,<FINAL_PASS=1>,<SINGLE_CHANNEL=1>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=4713
+
+Cmd: compileComputeKernel
+  insize=21827 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/Shadows/RaytracingShadowFilter.compute kernel=AreaShadowApplyTAA cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=5655
+
+Cmd: compileComputeKernel
+  insize=9515 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/Denoising/ReflectionDenoiser.compute kernel=BilateralFilterH cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<BILATERAL_FILTER=BilateralFilterH>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=5897
+
+Cmd: compileComputeKernel
+  insize=33284 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/Shadows/RaytracingShadow.compute kernel=OutputSpecularShadowTexture cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<OUTPUT_SHADOW_TEXTURE=OutputSpecularShadowTexture>,<SPECULAR_SHADOW=1>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=1198
+
+Cmd: compileComputeKernel
+  insize=6865 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/RenderPass/ColorPyramid.compute kernel=KColorGaussian cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<KERNEL_SIZE=8>,<MAIN_GAUSSIAN=KColorGaussian>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=DISABLE_TEXTURE2D_X_ARRAY SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=6491
+
+Cmd: compileComputeKernel
+  insize=14438 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/Denoising/TemporalFilter.compute kernel=TemporalAccumulationSingle cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<TEMPORAL_ACCUMULATION=TemporalAccumulationSingle>,<SINGLE_CHANNEL=1>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=2098
+
+Cmd: compileComputeKernel
+  insize=14438 file=C:/Users/philipc/Documents/Personal/UnityStuff/WagerOfWar/ShaderTests/Library/PackageCache/com.unity.render-pipelines.high-definition@10.6.0/Runtime/RenderPipeline/Raytracing/Shaders/Denoising/TemporalFilter.compute kernel=CopyHistorySingle cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=19 km=<COPY_HISTORY=CopyHistorySingle>,<SINGLE_CHANNEL=1>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=686
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cmd: initializeCompiler
+
