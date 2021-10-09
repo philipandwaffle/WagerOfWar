@@ -39,7 +39,7 @@ public class Board : MonoBehaviour
     {
         Vector2 targetPos = new Vector2((int)(u?.name[0] - '0'), (int)(u.name[2] - '0'));
 
-        List<Vector2> unitsToAffect = GetEffected(a, u, targetPos);
+        List<Vector2> unitsToAffect = GetEffected(a, targetPos);
         foreach (Vector2 unitPos in unitsToAffect)
         {
             float falloffMultiplier = GetFalloffModifier(unitPos, targetPos, a._range);
@@ -47,7 +47,7 @@ public class Board : MonoBehaviour
             _board[(int)unitPos.x][(int)unitPos.y]?.GetComponent<EffectController>().AddEffects(a._effects);
         }
     }
-    private List<Vector2> GetEffected(Action a, Unit u, Vector2 targetPos)
+    private List<Vector2> GetEffected(Action a, Vector2 targetPos)
     {
         List<Vector2> unitsToAffect = new List<Vector2>();
         for (int x = 0; x < _board.Count; x++)
@@ -55,12 +55,15 @@ public class Board : MonoBehaviour
             for (int y = 0; y < _board[x].Count; y++)
             {
                 GameObject go = _board[x][y];
-                if (_board[x][y] == null || _board[x][y].Equals(null)) { break; }
-                Vector2 unitPos = new Vector2(x, y);
-                bool inRange = IsInRange(unitPos, targetPos, a._range);
-                int? uTeam = _board[x][y]?.GetComponent<Unit>()._team;
-                bool unitEffected = IsUnitEffected(_board[x][y]?.GetComponent<Unit>()._team, Game._currentTeam, a._targetFirendly);
-                if (inRange && unitEffected) { unitsToAffect.Add(unitPos); }
+                bool unitExists = _board[x][y]?.Equals(null) == null ? false : !_board[x][y].Equals(null);
+                if (unitExists)
+                {
+                    Vector2 unitPos = new Vector2(x, y);
+                    bool inRange = IsInRange(unitPos, targetPos, a._range);
+                    int uTeam = _board[x][y].GetComponent<Unit>()._team;
+                    bool unitEffected = IsUnitEffected(_board[x][y].GetComponent<Unit>()._team, Game._currentTeam, a._targetFirendly);
+                    if (inRange && unitEffected) { unitsToAffect.Add(unitPos); }
+                }
             }
         }
         unitsToAffect = PruneAType(unitsToAffect, targetPos, a._aType);
@@ -71,9 +74,8 @@ public class Board : MonoBehaviour
         float dist = Vector2.Distance(unitPos, targetPos);
         return dist <= range;
     }    
-    public bool IsUnitEffected(int? uTeam, int currentTeam, bool targetFriendly)
+    public bool IsUnitEffected(int uTeam, int currentTeam, bool targetFriendly)
     {
-        uTeam = uTeam == null ? 0 : uTeam;
         //Debug.Log($"{unitTeam},{currentTeam},{targetFriendly}: {((unitTeam == currentTeam) && targetFriendly) || ((unitTeam != currentTeam) && !targetFriendly)}");
         return ((uTeam == currentTeam) && targetFriendly) || ((uTeam != currentTeam) && !targetFriendly);
     }    
@@ -85,21 +87,31 @@ public class Board : MonoBehaviour
             switch (aType)
             {
                 case ActionType.circle:
-                    prunedUnits.Add(uPos);
-                    break;
+                { 
+                prunedUnits.Add(uPos);
+                break;
+                }
                 case ActionType.cross:
+                {
                     if (uPos.x == tPos.x || uPos.y == tPos.y) { prunedUnits.Add(uPos); }
                     break;
+                }
                 case ActionType.diagonal:
+                {
                     Vector2 adjustedPoint = uPos - tPos;
                     if (Mathf.Abs(adjustedPoint.x) == Mathf.Abs(adjustedPoint.y)) { prunedUnits.Add(uPos); }
                     break;
+                }
                 case ActionType.horizontal:
+                {
                     if (tPos.y == uPos.y) { prunedUnits.Add(uPos); }
                     break;
+                }
                 case ActionType.vertical:
+                {
                     if (tPos.x == uPos.x) { prunedUnits.Add(uPos); }
                     break;
+                }
             }
         }
         return prunedUnits;

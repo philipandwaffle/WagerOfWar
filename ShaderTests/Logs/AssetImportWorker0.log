@@ -301,3 +301,90 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/About/UniversalRenderPipelineAsset.asset
+  artifactKey: Guid(379ce64dffaf7be439303a8a11d8f7a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/About/UniversalRenderPipelineAsset.asset using Guid(379ce64dffaf7be439303a8a11d8f7a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a553d6daa3b669dec80adc381f916b99') in 0.073808 seconds 
+  Import took 0.083666 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/About/UniversalRenderPipelineAsset_Renderer.asset
+  artifactKey: Guid(a3eb250ef8e345e41b43cd903ec11857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/About/UniversalRenderPipelineAsset_Renderer.asset using Guid(a3eb250ef8e345e41b43cd903ec11857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aee99b6f0e741a97c1a086ad6f9011c') in 0.029728 seconds 
+  Import took 0.038076 seconds .
+
+========================================================================
+Received Prepare
+Switching render pipeline 00000000000000000000000000000000 -> 379ce64dffaf7be439303a8a11d8f7a5
+Refreshing native plugins compatible for Editor in 14.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 237 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.1 MB.
+System memory in use after: 104.6 MB.
+
+Unloading 169 unused Assets to reduce memory usage. Loaded Objects now: 5191.
+Total: 12.947700 ms (FindLiveObjects: 0.323000 ms CreateObjectMapping: 0.165700 ms MarkObjects: 6.118800 ms  DeleteObjects: 6.338500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 468.988279 seconds.
+  path: Assets/Unlit.hlsl
+  artifactKey: Guid(cd2ef935b3103d24da1d0c536c472822) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unlit.hlsl using Guid(cd2ef935b3103d24da1d0c536c472822) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7753f45a12164bc5cf7f74e0ca4b7957') in 0.024913 seconds 
+  Import took 0.034570 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.088233 seconds.
+  path: Assets/UnlitShaderGraph.shadergraph
+  artifactKey: Guid(1cf10e6fd590a9b4a93c0eb2e777b997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnlitShaderGraph.shadergraph using Guid(1cf10e6fd590a9b4a93c0eb2e777b997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd44c1f2f8dcdb8be441a058e418893c') in 0.014030 seconds 
+  Import took 0.023440 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.985699 seconds.
+  path: Assets/UnlitShaderGraph.shadergraph
+  artifactKey: Guid(1cf10e6fd590a9b4a93c0eb2e777b997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnlitShaderGraph.shadergraph using Guid(1cf10e6fd590a9b4a93c0eb2e777b997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd44c1f2f8dcdb8be441a058e418893c') in 0.005388 seconds 
+  Import took 0.012390 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 824.352619 seconds.
+  path: Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/About/UniversalRenderPipelineAsset.asset
+  artifactKey: Guid(379ce64dffaf7be439303a8a11d8f7a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/About/UniversalRenderPipelineAsset.asset using Guid(379ce64dffaf7be439303a8a11d8f7a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd216f042b12245a585ffa9e165dfffdb') in 0.005320 seconds 
+  Import took 0.014363 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.435681 seconds.
+  path: Assets/New Shader Graph.shadergraph
+  artifactKey: Guid(e316ea27146010c448d3257c65ed0971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Shader Graph.shadergraph using Guid(e316ea27146010c448d3257c65ed0971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '237902a53332c63b84786e5bc8ff4e70') in 0.014472 seconds 
+  Import took 0.023343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012745 seconds.
+  path: Assets/New Shader Graph.shadergraph
+  artifactKey: Guid(e316ea27146010c448d3257c65ed0971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Shader Graph.shadergraph using Guid(e316ea27146010c448d3257c65ed0971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '237902a53332c63b84786e5bc8ff4e70') in 0.005328 seconds 
+  Import took 0.017535 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
